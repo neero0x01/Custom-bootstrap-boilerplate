@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mizuxe | The Book Cover Theme</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+
+
+
+
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    $('#year').text(new Date().getFullYear());
+
+    // init scrollspy
+    $('body').scrollspy({target: '#main-nav'});
+
+    // smooth scrolling
+    $('#main-nav a').on('click', function(e) {
+      if(this.hash !== "") {
+        e.preventDefault();
+        const hash = this.hash;
+
+        $('html,body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          window.location.hash = hash;
+        })
+      }
+    })
+  </script>
+
+
+</body>
+</html>
